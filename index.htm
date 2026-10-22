@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Single File JS Example</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+
+  <h2 id="message">Original text</h2>
+  <button onclick="changeText()">Click me</button>
+
+  <script>
+    // Basic variable
+    let name = "Aarav";
+    console.log("Hello, " + name);
+
+    // Basic function
+    function greet(person) {
+      return "Hello, " + person + "!";
+    }
+    console.log(greet("Aarav"));
+
+    // Conditional
+    let age = 20;
+    if (age >= 18) {
+      console.log("You are an adult.");
+    } else {
+      console.log("You are a minor.");
+    }
+
+    // Loop
+    for (let i = 1; i <= 5; i++) {
+      console.log("Number: " + i);
+    }
+
+    // Array
+    let fruits = ["apple", "banana", "mango"];
+    fruits.forEach(function(fruit) {
+      console.log(fruit);
+    });
+
+    // Object
+    let person = {
+      name: "Aarav",
+      city: "Bengaluru",
+      greet() {
+        console.log("Hi, I'm " + this.name);
+      }
+    };
+    person.greet();
+
+    // DOM manipulation (all inside one file)
+    function changeText() {
+      document.getElementById("message").textContent = "Text changed!";
+    }
+  </script>
+
 </body>
 </html>
