@@ -1,58 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Single File JS Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <main class="calculator" aria-label="Calculator">
+    <div class="calculator__top">
+      <span class="calculator__brand">CALCULATOR</span>
+      <span class="calculator__status" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+    </div>
 
-  <h2 id="message">Original text</h2>
-  <button onclick="changeText()">Click me</button>
+    <section class="calculator__screen" aria-label="Display">
+      <p class="calculator__expression" id="expression" aria-hidden="true"></p>
+      <output class="calculator__display" id="display" aria-live="polite" aria-atomic="true">0</output>
+    </section>
 
-  <script>
-    // Basic variable
-    let name = "Aarav";
-    console.log("Hello, " + name);
+    <section class="keypad" aria-label="Calculator keys">
+      <button class="key key--utility" type="button" data-action="clear" aria-label="All clear">AC</button>
+      <button class="key key--utility" type="button" data-action="sign" aria-label="Change sign">+/−</button>
+      <button class="key key--utility" type="button" data-action="percent" aria-label="Percent">%</button>
+      <button class="key key--operator" type="button" data-action="operator" data-value="/" aria-label="Divide">÷</button>
 
-    // Basic function
-    function greet(person) {
-      return "Hello, " + person + "!";
-    }
-    console.log(greet("Aarav"));
+      <button class="key" type="button" data-action="digit" data-value="7">7</button>
+      <button class="key" type="button" data-action="digit" data-value="8">8</button>
+      <button class="key" type="button" data-action="digit" data-value="9">9</button>
+      <button class="key key--operator" type="button" data-action="operator" data-value="*" aria-label="Multiply">×</button>
 
-    // Conditional
-    let age = 20;
-    if (age >= 18) {
-      console.log("You are an adult.");
-    } else {
-      console.log("You are a minor.");
-    }
+      <button class="key" type="button" data-action="digit" data-value="4">4</button>
+      <button class="key" type="button" data-action="digit" data-value="5">5</button>
+      <button class="key" type="button" data-action="digit" data-value="6">6</button>
+      <button class="key key--operator" type="button" data-action="operator" data-value="-" aria-label="Subtract">−</button>
 
-    // Loop
-    for (let i = 1; i <= 5; i++) {
-      console.log("Number: " + i);
-    }
+      <button class="key" type="button" data-action="digit" data-value="1">1</button>
+      <button class="key" type="button" data-action="digit" data-value="2">2</button>
+      <button class="key" type="button" data-action="digit" data-value="3">3</button>
+      <button class="key key--operator" type="button" data-action="operator" data-value="+" aria-label="Add">+</button>
 
-    // Array
-    let fruits = ["apple", "banana", "mango"];
-    fruits.forEach(function(fruit) {
-      console.log(fruit);
-    });
-
-    // Object
-    let person = {
-      name: "Aarav",
-      city: "Bengaluru",
-      greet() {
-        console.log("Hi, I'm " + this.name);
-      }
-    };
-    person.greet();
-
-    // DOM manipulation (all inside one file)
-    function changeText() {
-      document.getElementById("message").textContent = "Text changed!";
-    }
-  </script>
-
+      <button class="key key--zero" type="button" data-action="digit" data-value="0">0</button>
+      <button class="key" type="button" data-action="decimal" aria-label="Decimal point">.</button>
+      <button class="key key--operator" type="button" data-action="equals" aria-label="Equals">=</button>
+    </section>
+    <div class="calculator__home-indicator" aria-hidden="true"></div>
+  </main>
 </body>
 </html>
